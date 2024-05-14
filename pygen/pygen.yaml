@@ -1,0 +1,48 @@
+modules:
+  proj.shop:
+    gopkg: shop
+    filename: shop.go
+    import: []
+    classes:
+    - name: Product
+      args:
+      - name: name
+        type: string
+      methods: {}
+    - name: Shop
+      args: []
+      methods:
+        add_product:
+          type: instance
+          args:
+          - name: product
+            type: '*goclass.Class'
+          output: ''
+        delete_products:
+          type: instance
+          args:
+          - name: product
+            type: '*goclass.Class'
+          output: ''
+        get_products:
+          type: instance
+          args: []
+          output: '[]Product'
+    functions: []
+  proj.customer:
+    gopkg: customer
+    filename: customer.go
+    import: []
+    classes:
+    - name: Customer
+      args:
+      - name: shop
+        type: '*goclass.Class'
+      methods:
+        by_product:
+          type: instance
+          args:
+          - name: product
+            type: '*goclass.Class'
+          output: ''
+    functions: []
